@@ -2,7 +2,7 @@ import random
 
 # Moods
 def mad(mood):
-    print('Neko is mad. What would you like to do?:') #print current mood
+    print('Neko is mad.') #print current mood
     print('Enter a lowercase letter: (f)eed, (p)lay, (s)nuggle, (l)eave alone') #prompt user input and display options
     action = input() #accept user input, then check it, print a result, and return to while loop
     if action == 'f':
@@ -19,7 +19,7 @@ def mad(mood):
         return mood + 1 #this is the correct action for this mood, mood increases by 1
 
 def hungry(mood):
-    print('Neko is hungry. What would you like to do?:') #print current mood
+    print('Neko is hungry.') #print current mood
     print('Enter a lowercase letter: (f)eed, (p)lay, (s)nuggle, (l)eave alone') #prompt user input and display options
     action = input() #accept user input, then check it, print a result, and return to while loop
     if action == 'f':
@@ -36,7 +36,7 @@ def hungry(mood):
         return mood #incorrect action, return the same mood value to the loop to try again
 
 def bored(mood):
-    print('Neko is bored. What would you like to do?:') #print current mood
+    print('Neko is bored.') #print current mood
     print('Enter a lowercase letter: (f)eed, (p)lay, (s)nuggle, (l)eave alone') #prompt user input and display options
     action = input() #accept user input, then check it, print a result, and return to while loop
     if action == 'f':
@@ -53,7 +53,7 @@ def bored(mood):
         return mood #incorrect action, return the same mood value to the loop to try again
 
 def sleepy(mood): 
-    print('Neko is sleepy. What would you like to do?:') #print current mood
+    print('Neko is sleepy.') #print current mood
     print('Enter a lowercase letter: (f)eed, (p)lay, (s)nuggle, (l)eave alone') #prompt user input and display options
     action = input() #accept user input, then check it, print a result, and return to while loop
     if action == 'f':
