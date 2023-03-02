@@ -11,33 +11,33 @@ def mad(mood):
     print(action_choice) 
     action = input() 
     if action == 'f':
-        print('Neko walked away with disinterest! Try again.')
+        print('Neko walked away with disinterest! (Mood decreased)')
         return mood -1
     elif action == 'p':
-        print('Neko simply blinks at you with an air of superiority! Silly human, try again.')
+        print('Neko simply blinks at you with an air of superiority! Silly human. (Mood decreased)')
         return mood -1
     elif action == 's':
-        print('Neko bit you, ouch! (Mood has decreased)')
+        print('Neko bit you, ouch! (Mood decreased)')
         return mood - 1
     elif action == 'l':
-        print('Neko is pleased that you respected their boundaries. (Mood has improved.)')
+        print('Neko is pleased that you respected their boundaries. (Mood improved)')
         return mood + 1 
 
 def hungry(mood):
-    print('Neko keeps following you around and meowing for... somthing?')
+    print('Neko keeps following you around and meowing for... something?')
     print(action_choice)
     action = input() 
     if action == 'f':
-        print('Neko eats all of the food! (Mood has improved)')
+        print('Neko eats all of the food! (Mood improved)')
         return mood + 1
     elif action == 'p':
-        print('Neko gnaws on the toy! I wonder what it tastes like? Try again.')
+        print('Neko gnaws on the toy! I wonder what it tastes like? (Mood decreased)')
         return mood -1
     elif action == 's':
-        print('Neko stares daggers at you! Try again.')
+        print('Neko stares daggers at you! (Mood decreased)')
         return mood -1
     elif action == 'l':
-        print('Neko nips your ankle! Try again.')
+        print('Neko nips your ankle! (Mood decreased)')
         return mood -1
 
 def bored(mood):
@@ -45,16 +45,16 @@ def bored(mood):
     print(action_choice) 
     action = input() 
     if action == 'f':
-        print('Neko plays with the food and makes a mess! Try again.')
+        print('Neko plays with the food and makes a mess! (Mood decreased)')
         return mood -1
     elif action == 'p':
-        print('Neko pounces on the toy with glee! (Mood has improved.)')
+        print('Neko pounces on the toy with glee! (Mood improved)')
         return mood + 1 
     elif action == 's':
-        print('Neko offers a belly... but its a trap! Try again.')
+        print('Neko offers a belly... but its a trap! (Mood decreased)')
         return mood -1
     elif action == 'l':
-        print('Neko scratches at the furniture! Try again.')
+        print('Neko scratches at the furniture! (Mood decreased)')
         return mood -1
 
 def sleepy(mood): 
@@ -62,16 +62,16 @@ def sleepy(mood):
     print(action_choice) 
     action = input()
     if action == 'f':
-        print('Neko sniffs at the food before deciding it would take too much energy to eat now.')
+        print('Neko sniffs at the food before deciding it would take too much energy to eat now. (Mood decreased)')
         return mood -1
     elif action == 'p':
-        print('Neko lazily bats at the toy a few times before ignoring you!')
+        print('Neko lazily bats at the toy a few times before ignoring you! (Mood decreased)')
         return mood -1
     elif action == 's':
-        print('Neko purrs contentedly and drifts off to sleep in your lap.')
+        print('Neko purrs contentedly and drifts off to sleep in your lap. (Mood improved)')
         return mood + 1 
     elif action == 'l':
-        print('Neko hides under the bed and naps alone!')
+        print('Neko hides under the bed and naps alone! (Mood decreased)')
         return mood -1
 
 # generate a random number that correlates to different moods
@@ -84,7 +84,7 @@ while True: # main game loop
     print('Neko-Neko : a text-based adventure about taking care of a needy cat')
     print('Can you make Neko happy? All cats are difficult to read, and Neko is no exception.')
     print('Respond to her mood by choosing actions. Be careful, too many incorrect actions may make her run away!')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone'
     
     while True:
@@ -108,4 +108,5 @@ while True: # main game loop
     if replay == 'y':
         continue
     if replay == 'n':
+        print('Thanks for playing!')
         quit()
