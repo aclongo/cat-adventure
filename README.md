@@ -17,8 +17,10 @@ Each mood prompts the user to respond with an action:
 
 Actions return a text-based response from Neko. 
 If you use the correct action for the current mood, the mood value will increase by one step.
-If you use the incorrect action, then the mood value does not change and the user is prompted to try again.
-If the mood ever reaches a value of 5, then Neko is happy and the program ends.
+If you use the incorrect action, then the mood value decreases.
+If the mood ever reaches a value of 5, then Neko is happy and the game is over!
+if the mood ever reaches a value of 0, Neko runs away and the game is over!
+Upon finishing, the game will ask you if you'd like to replay or start over.
 
 Improvements to be made:
 1. Input validation to only accept letters f, p, s and l
