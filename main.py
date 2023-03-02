@@ -4,7 +4,7 @@ import random
 #print current mood
 #prompt user input and display options
 #accept user input, then check it, print a result, and return to while loop
-	#incorrect action, return the same mood value to the loop to try again
+	#incorrect action, reduce the mood by 1
 	#correct action, mood increases by 1
 def mad(mood):
     print('Neko seems to be easily agitated and aloof right now.') 
@@ -74,19 +74,19 @@ def sleepy(mood):
         print('Neko hides under the bed and naps alone! (Mood decreased)')
         return mood -1
 
-# generate a random number that correlates to different moods
-mood = random.randrange(1, 5)
-
 # check what the current mood value is and pass it to the correct function
 # if the correct action is taken within a fuction, the mood will increase value
 # if mood reaches 5 (happy), the program ends
 while True: # main game loop
-    print('Neko-Neko : a text-based adventure about taking care of a needy cat')
-    print('Can you make Neko happy? All cats are difficult to read, and Neko is no exception.')
+    print('NEKO-NEKO: a text-based adventure about taking care of a needy cat ^_^')
+    print('Can you make Neko happy?')
     print('Respond to her mood by choosing actions. Be careful, too many incorrect actions may make her run away!')
-    print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone'
+    print(' ')
     
+    # generate a random number that correlates to different moods
+    mood = random.randrange(1, 5)
+    action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone'
+
     while True:
         if mood == 1:
          mood = mad(mood)
@@ -100,7 +100,7 @@ while True: # main game loop
             print('Oh no! It looks like Neko ran away...')
             break
         else: # if mood reaches 5, Neko is happy and game ends
-            print('Great! You were able to navigate Nekos moods and make her happy.')
+            print('Great! You were able to make Neko happy.')
             break
     
     print('Would you like to play again? y/n')
@@ -108,5 +108,4 @@ while True: # main game loop
     if replay == 'y':
         continue
     if replay == 'n':
-        print('Thanks for playing!')
         quit()
