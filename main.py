@@ -12,10 +12,10 @@ def mad(mood):
     action = input() 
     if action == 'f':
         print('Neko walked away with disinterest! Try again.')
-        return mood 
+        return mood -1
     elif action == 'p':
         print('Neko simply blinks at you with an air of superiority! Silly human, try again.')
-        return mood 
+        return mood -1
     elif action == 's':
         print('Neko bit you, ouch! (Mood has decreased)')
         return mood - 1
@@ -32,13 +32,13 @@ def hungry(mood):
         return mood + 1
     elif action == 'p':
         print('Neko gnaws on the toy! I wonder what it tastes like? Try again.')
-        return mood 
+        return mood -1
     elif action == 's':
         print('Neko stares daggers at you! Try again.')
-        return mood 
+        return mood -1
     elif action == 'l':
         print('Neko nips your ankle! Try again.')
-        return mood 
+        return mood -1
 
 def bored(mood):
     print('Neko seems to have a lot of excess energy right now.')
@@ -46,16 +46,16 @@ def bored(mood):
     action = input() 
     if action == 'f':
         print('Neko plays with the food and makes a mess! Try again.')
-        return mood 
+        return mood -1
     elif action == 'p':
         print('Neko pounces on the toy with glee! (Mood has improved.)')
         return mood + 1 
     elif action == 's':
         print('Neko offers a belly... but its a trap! Try again.')
-        return mood
+        return mood -1
     elif action == 'l':
         print('Neko scratches at the furniture! Try again.')
-        return mood
+        return mood -1
 
 def sleepy(mood): 
     print('Neko seems to have low energy right now.') 
@@ -63,16 +63,16 @@ def sleepy(mood):
     action = input()
     if action == 'f':
         print('Neko sniffs at the food before deciding it would take too much energy to eat now.')
-        return mood
+        return mood -1
     elif action == 'p':
         print('Neko lazily bats at the toy a few times before ignoring you!')
-        return mood 
+        return mood -1
     elif action == 's':
         print('Neko purrs contentedly and drifts off to sleep in your lap.')
         return mood + 1 
     elif action == 'l':
         print('Neko hides under the bed and naps alone!')
-        return mood
+        return mood -1
 
 # generate a random number that correlates to different moods
 mood = random.randrange(1, 5)
