@@ -108,5 +108,5 @@ while True: # main game loop
     if replay == 'y':
         continue
     if replay == 'n':
-	print('Thanks for playing!)
+	print('Thanks for playing!')
         quit()
