@@ -6,10 +6,24 @@ import random
 #accept user input, then check it, print a result, and return to while loop
 	#incorrect action, reduce the mood by 1
 	#correct action, mood increases by 1
+
+def input_validation(selection):
+    while True:
+        if selection in ['f', 'p', 's','l']:
+            return selection
+        elif selection == 'q':
+            print('Have a nice day!')
+            quit()
+        else:
+            print('Please enter a lowercase letter:')
+            selection = input()
+            continue
+
 def mad(mood):
     print('Neko seems to be easily agitated and aloof right now.') 
-    print(action_choice) 
-    action = input() 
+    print(action_choice)
+    user_selection = input() 
+    action = input_validation(user_selection) 
     if action == 'f':
         print('Neko walked away with disinterest! (Mood decreased)')
         return mood -1
@@ -26,7 +40,8 @@ def mad(mood):
 def hungry(mood):
     print('Neko keeps following you around and meowing for... something?')
     print(action_choice)
-    action = input() 
+    user_selection = input() 
+    action = input_validation(user_selection) 
     if action == 'f':
         print('Neko eats all of the food! (Mood improved)')
         return mood + 1
@@ -43,7 +58,8 @@ def hungry(mood):
 def bored(mood):
     print('Neko seems to have a lot of excess energy right now.')
     print(action_choice) 
-    action = input() 
+    user_selection = input() 
+    action = input_validation(user_selection) 
     if action == 'f':
         print('Neko plays with the food and makes a mess! (Mood decreased)')
         return mood -1
@@ -60,7 +76,8 @@ def bored(mood):
 def sleepy(mood): 
     print('Neko seems to have low energy right now.') 
     print(action_choice) 
-    action = input()
+    user_selection = input() 
+    action = input_validation(user_selection) 
     if action == 'f':
         print('Neko sniffs at the food before deciding it would take too much energy to eat now. (Mood decreased)')
         return mood -1
@@ -85,7 +102,7 @@ while True: # main game loop
     
     # generate a random number that correlates to different moods
     mood = random.randrange(1, 5)
-    action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone'
+    action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone or (q)uit'
 
     while True:
         if mood == 1:
@@ -108,5 +125,5 @@ while True: # main game loop
     if replay == 'y':
         continue
     if replay == 'n':
-	print('Thanks for playing!')
+        print('Thanks for playing!')
         quit()
