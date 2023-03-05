@@ -25,7 +25,7 @@ def input_validation(selection):
 def mad(mood):
     '''Called whenever the mood value is set to 1'''
     # a random hint text is chosen and printed
-    print(' ')
+    print()
     print(random.choice([
         'Neko seems to be easily agitated and aloof right now.',
         'Neko is vocalizing less frequently than usual and seems uninterested in your attempts to engage with her.',
@@ -35,21 +35,23 @@ def mad(mood):
     user_selection = input() # accepts user input
     action = input_validation(user_selection) # passes input to the input validation function and names the returning result 'action'
     if action == 'f': # user actions affect the mood of Neko, new mood values passed back to main loop
-        print('Neko walked away with disinterest! (Mood decreased)')
+        print('Neko ignores your attempts at domestication and escapes at the first opportunity.')
         return mood -1 # incorrect action
     elif action == 'p':
-        print('Neko simply blinks at you with an air of superiority! Silly human. (Mood decreased)')
+        print('Neko simply blinks at you with an air of superiority before stalking out of the room.')
         return mood -1 # incorrect action
     elif action == 's':
-        print('Neko bit your hand, ouch! (Mood decreased)')
+        print('Neko bit your outstretched hand before turning away, ouch!')
         return mood - 1 # incorrect action
     elif action == 'l':
         print('Neko is pleased that you respected her boundaries. (Mood improved)')
         return mood + 1 # correct action
+    elif action == 'o':
+        print('Neko gladly steps outside when you offer, but doesn\'t return!')
 
 def wild(mood):
     '''Called whenever the mood value is set to 2'''
-    print(' ')
+    print()
     print(random.choice([
         'Neko\'s eyes are dilated with a crazy look while she chases shadows and reflections.',
         'Neko has the zoomies! She\'s running back and forth around the house like a maniac.',
@@ -70,12 +72,12 @@ def wild(mood):
         print('Neko jumps onto a table and knocks over a lamp. She has too much pent-up energy for the indoors! (Mood decreased)')
         return mood - 1 # incorrect action
     if action == 'o':
-        print('You let Neko onto the patio. She speeds past you and lets out her pent-up energy while sniffing at the breeze. (Mood increased)')
+        print('You let Neko onto the patio. She speeds past you and lets out her pent-up energy while chasing bugs and sniffing at the breeze. (Mood increased)')
         return mood + 1 # correct action
 
 def hungry(mood):
     '''Called whenever the mood value is set to 3'''
-    print(' ')
+    print()
     print(random.choice([
         'Neko keeps following you around and meowing for... something?',
         'Neko seems to be trying to open up the cabinets in the kitchen.',
@@ -84,21 +86,24 @@ def hungry(mood):
     user_selection = input() 
     action = input_validation(user_selection) 
     if action == 'f':
-        print('Neko eats all of the food! (Mood improved)')
+        print('Neko gratefully eats all of the food or treats you offered her! (Mood improved)')
         return mood + 1 # correct action
     elif action == 'p':
-        print('Neko gnaws on the toy! I wonder what it tastes like? (Mood decreased)')
+        print('Neko gnaws on the toy a bit more than usual! I wonder what it tastes like? (Mood decreased)')
         return mood -1 # incorrect action
     elif action == 's':
-        print('Neko stares daggers at you! (Mood decreased)')
+        print('Neko immediately jumps down from your lap and walks towards the kitchen, howling. (Mood decreased)')
         return mood -1 # incorrect action
     elif action == 'l':
-        print('Neko nips your ankle! (Mood decreased)')
+        print('Neko nips your ankle with persistence! (Mood decreased)')
         return mood -1 # incorrect action
+    elif action == 'o':
+        print('Neko steps out the door and looks for prey to hunt for food on her own. (Mood decreased)')
+        return mood - 1 # incorrect action
 
 def bored(mood):
     '''Called whenever the mood value is set to 4'''
-    print(' ')
+    print()
     print(random.choice([
         'Neko is restlessly looking around, as if searching for something to do.',
         'Neko\'s tail is twitching impatiently, as if she\'s waiting for something to happen.',
@@ -119,10 +124,12 @@ def bored(mood):
     elif action == 'l':
         print('Neko scratches at the furniture with frustration! (Mood decreased)')
         return mood -1 # incorrect action
+    elif action == 'o':
+        print('Neko makes one circle around the patio before planting herself in front of the door and scratching to be let back in. (Mood decreased)')
 
 def sleepy(mood): 
     '''Called whenever the mood value is set to 5'''
-    print(' ')
+    print()
     print(random.choice([
         'Neko curls up in a small ball and starts to close her eyes, looking very peaceful.',
         'Neko\'s movements are slow and sluggish, almost as if she\'s struggling to stay awake.',
@@ -140,8 +147,11 @@ def sleepy(mood):
         print('You pick up Neko and pet her in your lap. She purrs contentedly and drifts off to sleep. (Ultimate happiness achieved!)')
         return mood + 1 # correct action
     elif action == 'l':
-        print('Neko dozes off alone, feeling sad. (Mood decreased)')
+        print('Neko slowly makes her way into the bedroom, where she falls asleep under the bed alone. (Mood decreased)')
         return mood -1 # incorrect action
+    elif action == 'o':
+        print('Neko curls up just outside the door and dozes off, waiting to be let back inside. (Mood decreased)')
+        return mood - 1 # incorrect action
 
 # MAIN GAME LOOP
 # Print game instructions
@@ -173,16 +183,16 @@ while True:
         elif mood == 5:
             mood = sleepy(mood)
         elif mood == 0: # if mood reaches 0, Neko runs away and game ends
-            print(' ')
+            print()
             print('Oh no! It looks like Neko ran away...Game over!')
             break
         else: # mood == 6, Neko is happy and game ends
-            print(' ')
+            print()
             print('Neko is happy - you win!')
             break
     
     # gives user the option to replay or quit
-    print(' ')
+    print()
     print('Would you like to play again? y/n')
     replay = input()
     if replay == 'y':
