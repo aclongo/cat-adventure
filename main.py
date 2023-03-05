@@ -6,7 +6,7 @@ import random
 def input_validation(selection):
     '''Validates user input and allows user to quit the program'''
     while True:
-        if selection in ['f', 'p', 's','l']:
+        if selection in ['f', 'p', 's','l','o']:
             return selection
         elif selection == 'q':
             print('Have a nice day!')
@@ -40,14 +40,39 @@ def mad(mood):
         print('Neko simply blinks at you with an air of superiority! Silly human. (Mood decreased)')
         return mood -1 # incorrect action
     elif action == 's':
-        print('Neko bit you, ouch! (Mood decreased)')
+        print('Neko bit your hand, ouch! (Mood decreased)')
         return mood - 1 # incorrect action
     elif action == 'l':
         print('Neko is pleased that you respected her boundaries. (Mood improved)')
         return mood + 1 # correct action
 
-def hungry(mood):
+def wild(mood):
     '''Called whenever the mood value is set to 2'''
+    print(random.choice([
+        'Neko\'s eyes are dilated with a crazy look while she chases shadows and reflections.',
+        'Neko has the zoomies! She\'s running back and forth around the house like a maniac.',
+        'Neko is jumping on and off furniture and knocking things over while stalking imaginary prey.']))
+    print(action_choice)
+    user_selection = input()
+    action = input_validation(user_selection)
+    if action == 'f':
+        print('Neko knocks over the food dish while zooming past it! (Mood decreased)')
+        return mood - 1 # incorrect action
+    if action == 'p':
+        print('Neko is a little rough. It\'s hard to tell if this is "playing" so much as "preying" on you. (Mood decreased)')
+        return mood - 1 # incorrect action
+    if action == 's':
+        print('Neko wriggles out of your grasp, leaving behind a trail of scratch marks. Ouch! (Mood decreased)')
+        return mood - 1 # incorrect action
+    if action == 'l':
+        print('Neko jumps onto a table and knocks over a lamp. She has too much pent-up energy for the indoors! (Mood decreased)')
+        return mood - 1 # incorrect action
+    if action == 'o':
+        print('You let Neko onto the patio. She speeds past you and lets out her pent-up energy while sniffing at the breeze. (Mood increased)')
+        return mood + 1 # correct action
+
+def hungry(mood):
+    '''Called whenever the mood value is set to 3'''
     print(random.choice([
         'Neko keeps following you around and meowing for... something?',
         'Neko seems to be trying to open the cabinet where you keep her food.',
@@ -69,7 +94,7 @@ def hungry(mood):
         return mood -1 # incorrect action
 
 def bored(mood):
-    '''Called whenever the mood value is set to 3'''
+    '''Called whenever the mood value is set to 4'''
     print(random.choice([
         'Neko is restlessly looking around, as if searching for something to do.',
         'Neko\'s tail is twitching impatiently, as if she\'s waiting for something to happen.',
@@ -92,7 +117,7 @@ def bored(mood):
         return mood -1 # incorrect action
 
 def sleepy(mood): 
-    '''Called whenever the mood value is set to 4'''
+    '''Called whenever the mood value is set to 5'''
     print(random.choice([
         'Neko curls up in a small ball and starts to close her eyes, looking very peaceful.',
         'Neko\'s movements are slow and sluggish, almost as if she\'s struggling to stay awake.',
@@ -117,7 +142,7 @@ def sleepy(mood):
 # Print game instructions
 # Check what the current mood value is and pass it to the correct function
 # User increases or decreases the mood value based on action choices
-    # If mood reaches 5 (happy), the game ends
+    # If mood reaches 6 (happy), the game ends
     # If mood reachs 0, the game ends
     # User can choose to replay or exit game
 while True:
@@ -127,24 +152,26 @@ while True:
     print(' ')
     
     # generate a random starting mood, each integer correlates to a different mood below
-    mood = random.randrange(1, 5)
+    mood = random.randrange(1, 6)
     # action_choice will be printed each time a mood function is called
-    action_choice = 'Choose an action: (f)eed, (p)lay, (s)nuggle, (l)eave alone or (q)uit'
+    action_choice = 'Choose an action: (f)eed, (l)eave alone, let (o)utside, (p)lay with, (s)nuggle, or (q)uit'
 
     # checks current mood value and passes it to the correct function
     while True:
         if mood == 1:
-         mood = mad(mood)
+            mood = mad(mood)
         elif mood == 2:
-            mood = hungry(mood)
+            mood = wild(mood)
         elif mood == 3:
-            mood = bored(mood)
+            mood = hungry(mood)
         elif mood == 4:
+            mood = bored(mood)
+        elif mood == 5:
             mood = sleepy(mood)
         elif mood == 0: # if mood reaches 0, Neko runs away and game ends
             print('Oh no! It looks like Neko ran away...Game over!')
             break
-        else: # mood == 5, Neko is happy and game ends
+        else: # mood == 6, Neko is happy and game ends
             print('Neko is happy - you win!')
             break
     
