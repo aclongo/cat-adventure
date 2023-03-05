@@ -25,6 +25,7 @@ def input_validation(selection):
 def mad(mood):
     '''Called whenever the mood value is set to 1'''
     # a random hint text is chosen and printed
+    print(' ')
     print(random.choice([
         'Neko seems to be easily agitated and aloof right now.',
         'Neko is vocalizing less frequently than usual and seems uninterested in your attempts to engage with her.',
@@ -48,6 +49,7 @@ def mad(mood):
 
 def wild(mood):
     '''Called whenever the mood value is set to 2'''
+    print(' ')
     print(random.choice([
         'Neko\'s eyes are dilated with a crazy look while she chases shadows and reflections.',
         'Neko has the zoomies! She\'s running back and forth around the house like a maniac.',
@@ -73,6 +75,7 @@ def wild(mood):
 
 def hungry(mood):
     '''Called whenever the mood value is set to 3'''
+    print(' ')
     print(random.choice([
         'Neko keeps following you around and meowing for... something?',
         'Neko seems to be trying to open the cabinet where you keep her food.',
@@ -95,6 +98,7 @@ def hungry(mood):
 
 def bored(mood):
     '''Called whenever the mood value is set to 4'''
+    print(' ')
     print(random.choice([
         'Neko is restlessly looking around, as if searching for something to do.',
         'Neko\'s tail is twitching impatiently, as if she\'s waiting for something to happen.',
@@ -118,6 +122,7 @@ def bored(mood):
 
 def sleepy(mood): 
     '''Called whenever the mood value is set to 5'''
+    print(' ')
     print(random.choice([
         'Neko curls up in a small ball and starts to close her eyes, looking very peaceful.',
         'Neko\'s movements are slow and sluggish, almost as if she\'s struggling to stay awake.',
