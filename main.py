@@ -48,6 +48,7 @@ def mad(mood):
         return mood + 1 # correct action
     elif action == 'o':
         print('Neko gladly steps outside when you offer, but doesn\'t return!')
+        return mood - 1 # incorrect action
 
 def wild(mood):
     '''Called whenever the mood value is set to 2'''
@@ -126,6 +127,7 @@ def bored(mood):
         return mood -1 # incorrect action
     elif action == 'o':
         print('Neko makes one circle around the patio before planting herself in front of the door and scratching to be let back in. (Mood decreased)')
+        return mood - 1 # incorrect action
 
 def sleepy(mood): 
     '''Called whenever the mood value is set to 5'''
