@@ -25,7 +25,7 @@ def input_validation(selection):
 def mad(mood):
     '''Called whenever the mood value is set to 1'''
     print('Neko seems to be easily agitated and aloof right now.') 
-    print(action_choice) # prints the action choice string defined on line 109
+    print(action_choice) # prints the action choice string defined on line 117
     user_selection = input() # accepts user input
     action = input_validation(user_selection) # passes input to the input validation function and names the returning result 'action'
     if action == 'f': # user actions affect the mood of Neko, new mood values passed back to main loop
