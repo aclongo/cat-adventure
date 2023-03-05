@@ -1,27 +1,25 @@
-# cat-adventure
-A simple text-based adventure about taking care of a needy cat named Neko.
-Can you make Neko happy?
+# NEKO-NEKO
+NEKO-NEKO is a text-based adventure game about taking care of a needy cat. The game is played in the terminal and the player's goal is to keep the cat happy by responding to its changing moods with different actions.
 
-Neko has 4 possible starting moods in this iteration:
-1. Mad
-2. Hungry
-3. Bored
-4. Sleepy
+## Gameplay
 
-When the program first runs, a random starting mood is determined.
-Each mood prompts the user to respond with an action:
-(f)eed
-(p)lay
-(s)nuggle
-(l)eave alone
+The game starts with the player being given a random starting mood for the cat. There are four possible moods: mad, hungry, bored, and sleepy. The player will then be given a hint, chosen randomly from a pool for that mood, and must choose an action in response. Each action will either increase or decrease the cat's mood.
 
-Actions return a text-based response from Neko. 
-If you use the correct action for the current mood, the mood value will increase by one step.
-If you use the incorrect action, then the mood value decreases.
-If the mood ever reaches a value of 5, then Neko is happy and the game is over!
-if the mood ever reaches a value of 0, Neko runs away and the game is over!
-Upon finishing, the game will ask you if you'd like to replay or start over.
+### The available actions are:
+    (f)eed: Give the cat food.
+    (p)lay: Play with the cat.
+    (s)nuggle: Snuggle with the cat.
+    (l)eave alone: Leave the cat alone.
+    (q)uit: End the game.
 
-Improvements to be made:
-1. Input validation to only accept letters f, p, s and l
-2. More moods and actions!
+The player must enter a lowercase letter corresponding to the action they wish to do. This is then run through an input validation function to ensure only 'f', 'p', 's', 'l' or 'q' is entered. If not, the player is prompted to enter a lowercase letter and can try again. If they enter 'q', the program terminates.
+
+If the player chooses the correct action based on the cat's mood, the cat's mood will increase by one point. If the player chooses an incorrect action, the cat's mood will decrease by one point.
+
+The game ends when the cat's mood reaches either 0 or 5. If the mood reaches 0, the cat runs away and the game is over. If the mood reaches 5, the cat is happy and the player wins the game. At this point, the player can choose to either replay the game (with a random starting mood and random hints, for variability), or end the program.
+
+## Installation and Usage
+
+NEKO-NEKO requires Python 3 to run. To play the game, simply download or clone the repository, navigate to the game's directory in your terminal, and run the main.py file with Python. Or, you can play it directly on [Replit](https://replit.com/@aclongo/cat-adventure?v=1).
+
+Follow the on-screen instructions to play the game.
