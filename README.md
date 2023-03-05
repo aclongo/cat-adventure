@@ -13,7 +13,7 @@ The game starts with the player being given a random starting mood for the cat. 
     (s)nuggle: Snuggle with the cat.
     (q)uit: End the game.
 
-The player must enter a lowercase letter corresponding to the action they wish to do. This is then run through an input validation function to ensure only 'f', 'p', 's', 'l', 'o' or 'q' is entered. If not, the player is prompted to enter a lowercase letter and can try again. If they enter 'q', the program terminates.
+The player must enter a lowercase letter corresponding to the action they wish to do. This is then run through an input validation function to ensure only 'f', 'l', 'o', 'p', 's' or 'q' is entered. If not, the player is prompted to enter a lowercase letter and can try again. If they enter 'q', the program terminates.
 
 If the player chooses the correct action based on the cat's mood, the cat's mood will increase by one point. If the player chooses an incorrect action, the cat's mood will decrease by one point.
 
